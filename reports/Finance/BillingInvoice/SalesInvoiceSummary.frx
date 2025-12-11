@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/29/2024 13:26:50" ReportInfo.Modified="08/13/2025 15:36:24" ReportInfo.CreatorVersion="2025.1.0.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {      
+  
+  
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <BusinessObjectDataSource Name="SalesInvoice" ReferenceName="SalesInvoiceSummaryFRX" DataType="System.Int32" Enabled="true">
+      <Column Name="SalesInvoiceId" DataType="System.String"/>
+      <Column Name="SalesInvoiceNo" DataType="System.String"/>
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="PrincipalAmount" DataType="System.String"/>
+      <Column Name="VATAmount" DataType="System.String"/>
+      <Column Name="EWTAmount" DataType="System.Double" Format="Currency"/>
+      <Column Name="TotalAmount" DataType="System.Double" Format="Currency"/>
+      <Column Name="TenantName" DataType="System.String"/>
+      <Column Name="PresentAddress" DataType="System.String"/>
+      <Column Name="UnitDesc" DataType="System.String"/>
+      <Column Name="IsVATable" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <Parameter Name="SubTotal" DataType="System.String" AsString=""/>
+    <Total Name="CompanySubTotal" Expression="[SalesInvoice.TotalAmount]" Evaluator="DataSalesInvoice" PrintOn="GroupFooter1"/>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="215.9" PaperHeight="279.4" RawPaperSize="1" LeftMargin="5" TopMargin="5" RightMargin="5" BottomMargin="5" Watermark.Font="Arial, 60pt" LastPageSource="15" FirstPageSource="15">
+    <ReportTitleBand Name="ReportTitle1" Width="778.3" Height="109.62">
+      <TextObject Name="Text8" Top="9.45" Width="311.85" Height="28.35" Text="Billing Invoice Report" Font="Arial, 15.75pt, style=Bold"/>
+      <TextObject Name="Text16" Left="633.15" Top="9.45" Width="66.15" Height="18.9" Text="Print Date:" Font="Arial, 8.25pt"/>
+      <TextObject Name="Text17" Left="633.15" Top="28.35" Width="66.15" Height="18.9" Text="Print Time:" Font="Arial, 8.25pt"/>
+      <TextObject Name="Text18" Left="699.3" Top="9.45" Width="75.6" Height="18.9" Text="[Date]" Format="Date" Format.Format="d" HorzAlign="Right" Font="Arial, 8.25pt"/>
+      <TextObject Name="Text19" Left="699.3" Top="28.35" Width="75.6" Height="18.9" Text="[Date]" Format="Time" Format.Format="T" HorzAlign="Right" Font="Arial, 8.25pt"/>
+      <TextObject Name="Text21" Left="9.45" Top="56.7" Width="94.88" Height="22.68" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Fill.Color="224, 224, 224" Text=" Billing Date" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text25" Left="104.33" Top="56.7" Width="670.57" Height="22.68" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text27" Left="104.33" Top="79.38" Width="670.57" Height="22.68" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text33" Left="9.45" Top="79.38" Width="94.88" Height="22.68" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Fill.Color="224, 224, 224" Text=" Date Generate" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="110.95" Width="778.3" Height="24.57">
+      <TextObject Name="Text10" Left="9.45" Width="236.25" Height="22.68" Border.Lines="All" Text="Tenant" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text11" Left="245.7" Width="179.55" Height="22.68" Border.Lines="All" Text="Unit" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text12" Left="425.25" Width="56.7" Height="22.68" Border.Lines="All" Text="SI No." HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text13" Left="481.95" Width="56.7" Height="22.68" Border.Lines="All" Text="VATable" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text14" Left="538.65" Width="85.05" Height="22.68" Border.Lines="All" Text="VAT Amount" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text15" Left="623.7" Width="85.05" Height="22.68" Border.Lines="All" Text="Amt Due" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text20" Left="708.75" Width="66.15" Height="22.68" Border.Lines="All" Text="Status" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+    </PageHeaderBand>
+    <GroupHeaderBand Name="GroupHeader1" Top="136.86" Width="778.3" Height="30.24" Condition="[SalesInvoice.CompanyName]">
+      <TextObject Name="Text37" Left="9.45" Top="3.78" Width="765.07" Height="22.68" Border.ShadowWidth="0.5" Fill.Color="Gainsboro" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="txtCompany" Left="9.45" Top="7.56" Width="746.55" Height="11.34" CanGrow="true" CanShrink="true" AfterDataEvent="Text30_AfterData" Text=" [SalesInvoice.CompanyName]" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <DataBand Name="DataSalesInvoice" Top="168.43" Width="778.3" Height="26.46" Guides="0" DataSource="SalesInvoice">
+        <TextObject Name="Text24" Left="9.45" Width="236.25" Height="26.46" CanGrow="true" CanShrink="true" Text="[SalesInvoice.TenantName]" VertAlign="Center" Font="Arial, 8.25pt"/>
+        <TextObject Name="Text28" Left="425.25" Width="56.7" Height="26.46" CanGrow="true" CanShrink="true" Text="[SalesInvoice.SalesInvoiceNo]" Editable="true" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt"/>
+        <TextObject Name="Text29" Left="245.7" Width="179.55" Height="26.46" CanGrow="true" CanShrink="true" Text="[SalesInvoice.UnitDesc]" VertAlign="Center" Font="Arial, 8.25pt"/>
+        <TextObject Name="Text31" Left="481.95" Width="56.7" Height="26.46" CanGrow="true" CanShrink="true" Text="[SalesInvoice.IsVATable]" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt"/>
+        <TextObject Name="Text32" Left="538.65" Width="85.05" Height="26.46" CanGrow="true" CanShrink="true" Text="[SalesInvoice.VATAmount]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="" Format.PositivePattern="0" Format.NegativePattern="0" HorzAlign="Right" VertAlign="Center" Font="Arial, 8.25pt"/>
+        <TextObject Name="Text35" Left="623.7" Width="85.05" Height="26.46" CanGrow="true" CanShrink="true" Text="[SalesInvoice.TotalAmount]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="" Format.PositivePattern="0" Format.NegativePattern="0" HorzAlign="Right" VertAlign="Center" Font="Arial, 8.25pt"/>
+        <LineObject Name="Line2" Left="9.45" Top="24.57" Width="765.45" Border.Color="Silver" Border.Style="Dot"/>
+      </DataBand>
+      <GroupFooterBand Name="GroupFooter1" Top="196.22" Width="778.3" Height="28.35" Fill.Color="White">
+        <TextObject Name="Text36" Left="9.45" Width="529.2" Height="18.9" CanGrow="true" CanShrink="true" AfterDataEvent="Text30_AfterData" Text="Sub Total : [SalesInvoice.CompanyName]" HorzAlign="Right" VertAlign="Bottom" Font="Arial, 9pt, style=Bold"/>
+        <TextObject Name="Text38" Left="614.25" Width="94.5" Height="18.9" Text="[SubTotal]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="" Format.PositivePattern="0" Format.NegativePattern="0" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+        <LineObject Name="Line1" Left="538.65" Width="170.1"/>
+      </GroupFooterBand>
+    </GroupHeaderBand>
+    <PageFooterBand Name="PageFooter1" Top="225.91" Width="778.3" Height="15.12">
+      <TextObject Name="Text23" Left="623.7" Width="151.2" Height="15.12" Text="[PageN] of [TotalPages#]" HorzAlign="Right" Font="Arial, 8.25pt"/>
+      <TextObject Name="Text26" Left="9.45" Width="236.25" Height="15.12" Text="LMS-RNTL-SI V01" VertAlign="Center" Font="Arial, 8.25pt, style=Italic"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

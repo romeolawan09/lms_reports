@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/29/2024 13:26:50" ReportInfo.Modified="12/11/2025 10:37:30" ReportInfo.CreatorVersion="2025.1.0.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="OfficialReceipt" ReferenceName="OfficialReceiptFRX" DataType="System.Int32" Enabled="true">
+      <Column Name="OfficialReceiptId" DataType="System.String"/>
+      <Column Name="OfficialReceiptNo" DataType="System.String"/>
+      <Column Name="TenantName" DataType="System.String"/>
+      <Column Name="PresentAddress" DataType="System.String"/>
+      <Column Name="TINNo" DataType="System.String"/> 
+      <Column Name="UnitDesc" DataType="System.String"/>
+      <Column Name="PaymentTypeId" DataType="System.String"/>
+      <Column Name="PaymentTypeDesc" DataType="System.String"/>
+      <Column Name="PaymentMethodId" DataType="System.String"/>
+      <Column Name="PaymentMethodDesc" DataType="System.String"/>
+      <Column Name="TotalAmount" DataType="System.String"/>
+      <Column Name="TotalAmountInWords" DataType="System.String"/>
+      <Column Name="BankDesc" DataType="System.String"/>
+      <Column Name="PrintedByName" DataType="System.String"/>
+      <Column Name="PrintedDate" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="215.9" PaperHeight="120" Watermark.Font="Arial, 60pt" LastPageSource="15" FirstPageSource="15">
+    <ReportTitleBand Name="ReportTitle1" Width="740.5" Height="37.8">
+      <TextObject Name="txtCompanyName" Left="9.45" Top="9.45" Width="311.85" Height="18.9" Text="BARKLANE REALTY CORP." Font="Arial, 13pt"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41" Width="740.5" Height="160.65">
+     <TextObject Name="Text3" Left="245.7" Top="64.26" Width="434.7" Height="18.9" CanGrow="true" Text="[OfficialReceipt.PresentAddress]" Font="Arial, 10pt"/>
+      <TextObject Name="Text10" Left="245.7" Top="44.23" Width="434.7" Height="18.9" Text="[OfficialReceipt.TenantName]" Font="Arial, 9.75pt, style=Bold"/>
+      <TextObject Name="Text26" Left="481.95" Top="15.88" Width="198.45" Height="18.9" Text="[OfficialReceipt.PrintedDate]" Font="Arial, 10pt"/>
+      <TextObject Name="txtOfficialReceiptNo" Left="481.95" Width="198.45" Height="18.9" Text="[OfficialReceipt.OfficialReceiptNo]" Font="Arial, 9.75pt"/>
+      <TextObject Name="Text32" Left="170.1" Top="103.95" Width="510.3" Height="18.9" CanGrow="true" Text="[OfficialReceipt.TotalAmountInWords]" Font="Arial, 9.75pt, style=Bold"/>
+      <TextObject Name="Text24" Left="500.85" Top="85.05" Width="179.55" Height="18.9" Text="[OfficialReceipt.TINNo]" Font="Arial, 10pt"/>
+      <TextObject Name="Text33" Left="500.85" Top="122.85" Width="179.55" Height="18.9" Text="[OfficialReceipt.TotalAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 9.75pt, style=Bold"/>
+   
+   </PageHeaderBand>
+    <PageFooterBand Name="PageFooter1" Top="204.85" Width="740.5" Height="189" Guides="0">
+      
+      <TextObject Name="Text12" Left="481.95" Top="96.01" Width="207.9" Height="18.9" Text="[OfficialReceipt.PrintedByName]" HorzAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text21" Left="122.85" Top="132.3" Width="141.75" Height="18.9" Text="[OfficialReceipt.TotalAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 9.75pt, style=Bold"/>
+      <TextObject Name="Text7" Left="28.35" Width="160.65" Height="66.15" CanGrow="true" Text="[OfficialReceipt.UnitDesc]" VertAlign="Bottom" Font="Arial, 10pt"/>
+      <TextObject Name="Text30" Left="28.35" Top="113.4" Width="170.1" Height="18.9" Text="[OfficialReceipt.BankDesc]" Font="Arial, 10pt"/>
+      <TextObject Name="Text31" Left="321.3" Top="18.9" Width="226.8" Height="18.9" Text="[OfficialReceipt.PaymentTypeDesc]" Font="Arial, 10pt"/>
+      <TextObject Name="Text34" Left="122.85" Top="66.15" Width="141.75" Height="18.9" Text="[OfficialReceipt.TotalAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt"/>
+     
+    </PageFooterBand>
+  </ReportPage>
+</Report>
