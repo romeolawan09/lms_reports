@@ -3,7 +3,7 @@
   <Dictionary>
     <BusinessObjectDataSource Name="AcknowledgementReceipt" ReferenceName="AcknowledgementReceiptFRX" DataType="System.Int32" Enabled="true">
       <Column Name="AcknowledgementReceiptId" DataType="System.String"/>
-      <Column Name="AcknowledgementReceiptNo" DataType="System.String"/>
+      <Column Name="OfficialReceiptNo" DataType="System.String"/>
       <Column Name="PrincipalAmount" DataType="System.String"/>
       <Column Name="VATAmount" DataType="System.String"/>
       <Column Name="EWTAmount" DataType="System.String"/>
@@ -24,24 +24,28 @@
   <ReportPage Name="Page1" PaperWidth="215.9" PaperHeight="165" Watermark.Font="Arial, 60pt" LastPageSource="15" FirstPageSource="15">
     <ReportTitleBand Name="ReportTitle1" Width="740.5" Height="75.6">
       <TextObject Name="txtCompanyName" Left="9.45" Top="9.45" Width="311.85" Height="18.9" Text="SHANG LAND DEVELOPMENT CORP." Font="Arial, 13pt"/>
-      <TextObject Name="txtAcknowledgementReceiptNo" Left="481.95" Top="56.7" Width="179.55" Height="18.9" Text="[AcknowledgementReceipt.AcknowledgementReceiptNo]" Font="Arial, 9pt"/>
+      <TextObject Name="txtAcknowledgementReceiptNo" Left="481.95" Top="56.7" Width="179.55" Height="18.9" Text="[AcknowledgementReceipt.OfficialReceiptNo]" Font="Arial, 9pt"/>
     </ReportTitleBand>
     <PageHeaderBand Name="PageHeader1" Top="78.8" Width="740.5" Height="94.5">
+      <!--
       <TextObject Name="Text3" Left="18.9" Top="26.46" Width="406.35" Height="37.8" CanGrow="true" Text="[AcknowledgementReceipt.PresentAddress]" Font="Arial, 10pt"/>
       <TextObject Name="Text10" Left="18.9" Top="6.43" Width="406.35" Height="18.9" Text="[AcknowledgementReceipt.TenantName]" Font="Arial, 10pt"/>
       <TextObject Name="Text24" Left="481.95" Top="45.36" Width="179.55" Height="18.9" Text="[AcknowledgementReceipt.TINNo]" Font="Arial, 10pt"/>
       <TextObject Name="Text25" Left="481.95" Top="26.46" Width="179.55" Height="18.9" Text="[AcknowledgementReceipt.Terms]" Font="Arial, 10pt"/>
       <TextObject Name="Text26" Left="481.95" Top="6.43" Width="179.55" Height="18.9" Text="[AcknowledgementReceipt.PrintedDate]" Font="Arial, 10pt"/>
+      -->
     </PageHeaderBand>
     <GroupHeaderBand Name="GroupHeader1" Top="176.5" Width="740.5" Height="28.35" Condition="[AcknowledgementReceipt.CompanyName]">
       <TextObject Name="Text22" Left="28.35" Top="5.67" Width="245.7" Height="18.9" Text="[AcknowledgementReceipt.PaymentTypeDesc]" Font="Arial, 10pt"/>
       <DataBand Name="DataAcknowledgementReceipt" Top="208.05" Width="740.5" Height="22.68" Guides="0" DataSource="AcknowledgementReceipt">
+        <!--
         <TextObject Name="Text7" Left="47.25" Width="330.75" Height="18.9" CanGrow="true" Text="[AcknowledgementReceipt.UnitDesc]" Font="Arial, 10pt"/>
         <TextObject Name="Text6" Left="500.85" Width="132.3" Height="18.9" Text="[AcknowledgementReceipt.TotalAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt"/>
+        -->
       </DataBand>
     </GroupHeaderBand>
     <PageFooterBand Name="PageFooter1" Top="233.93" Width="740.5" Height="247.59" Guides="132.3">
-      <TextObject Name="Text12" Left="406.35" Top="218.86" Width="207.9" Height="18.9" Text="[AcknowledgementReceipt.PrintedByName]" HorzAlign="Center" Font="Arial, 10pt"/>
+      <!-- <TextObject Name="Text12" Left="406.35" Top="218.86" Width="207.9" Height="18.9" Text="[AcknowledgementReceipt.PrintedByName]" HorzAlign="Center" Font="Arial, 10pt"/>
       <TextObject Name="Text13" Left="500.85" Top="51.79" Width="132.3" Height="18.9" Text="[AcknowledgementReceipt.TotalAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt"/>
       <TextObject Name="Text14" Left="500.85" Top="94.5" Width="132.3" Height="18.9" Text="[AcknowledgementReceipt.VATAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt"/>
       <TextObject Name="Text15" Left="500.85" Top="117.18" Width="132.3" Height="18.9" Text="[AcknowledgementReceipt.VATAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt"/>
@@ -52,7 +56,7 @@
       <TextObject Name="Text20" Left="878.85" Top="170.1" Width="132.3" Height="18.9" Text="[AcknowledgementReceipt.VATAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt"/>
       <TextObject Name="Text21" Left="500.85" Top="160.65" Width="132.3" Height="18.9" Text="[AcknowledgementReceipt.TotalAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt"/>
       <TextObject Name="Text28" Left="207.9" Top="217.35" Width="75.6" Height="18.9" Text="[Date]" Format="Date" Format.Format="d" Font="Arial, 9pt"/>
-      <TextObject Name="Text29" Left="132.3" Top="217.35" Width="75.6" Height="18.9" Text="Print Date:" HorzAlign="Right" Font="Arial, 9pt"/>
+      <TextObject Name="Text29" Left="132.3" Top="217.35" Width="75.6" Height="18.9" Text="Print Date:" HorzAlign="Right" Font="Arial, 9pt"/> -->
     </PageFooterBand>
   </ReportPage>
 </Report>
