@@ -1,58 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="CSharp" ReportInfo.Created="10/29/2024 13:26:50" ReportInfo.Modified="08/20/2025 08:19:05" ReportInfo.CreatorVersion="2025.1.0.0">
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/29/2024 13:26:50" ReportInfo.Modified="12/12/2025 17:00:58" ReportInfo.CreatorVersion="2025.1.0.0">
   <Dictionary>
     <BusinessObjectDataSource Name="OfficialReceipt" ReferenceName="OfficialReceiptFRX" DataType="System.Int32" Enabled="true">
       <Column Name="OfficialReceiptId" DataType="System.String"/>
       <Column Name="OfficialReceiptNo" DataType="System.String"/>
-      <Column Name="PrincipalAmount" DataType="System.String"/>
-      <Column Name="VATAmount" DataType="System.String"/>
-      <Column Name="EWTAmount" DataType="System.String"/>
-      <Column Name="TotalAmount" DataType="System.String"/>
       <Column Name="TenantName" DataType="System.String"/>
       <Column Name="PresentAddress" DataType="System.String"/>
       <Column Name="TINNo" DataType="System.String"/>
-      <Column Name="Terms" DataType="System.String"/>
+      <Column Name="Terms" Enabled="false" DataType="System.String"/>
       <Column Name="UnitDesc" DataType="System.String"/>
       <Column Name="PaymentTypeId" DataType="System.String"/>
       <Column Name="PaymentTypeDesc" DataType="System.String"/>
-      <Column Name="MonthYearCovered" DataType="System.String"/>
-      <Column Name="NetOfVATAmount" DataType="System.String"/>
+      <Column Name="PaymentMethodId" DataType="System.String"/>
+      <Column Name="PaymentMethodDesc" DataType="System.String"/>
+      <Column Name="TotalAmount" DataType="System.String"/>
+      <Column Name="TotalAmountInWords" DataType="System.String"/>
+      <Column Name="BankDesc" DataType="System.String"/>
       <Column Name="PrintedByName" DataType="System.String"/>
       <Column Name="PrintedDate" DataType="System.String"/>
     </BusinessObjectDataSource>
   </Dictionary>
-  <ReportPage Name="Page1" PaperWidth="215.9" PaperHeight="165" Watermark.Font="Arial, 60pt" LastPageSource="15" FirstPageSource="15">
-    <ReportTitleBand Name="ReportTitle1" Width="740.5" Height="75.6"> 
-      <TextObject Name="txtCompanyName" Left="9.45" Top="9.45" Width="311.85" Height="18.9" Text="CASH REALTY BRIKER CORP." Font="Arial, 13pt"/>
-      <TextObject Name="txtOfficialReceiptNo" Left="481.95" Top="56.7" Width="179.55" Height="18.9" Text="[OfficialReceipt.OfficialReceiptNo]" Font="Arial, 9pt"/>
-    </ReportTitleBand>
-    <PageHeaderBand Name="PageHeader1" Top="78.46" Width="740.5" Height="94.5"> 
-      <TextObject Name="Text3" Left="18.9" Top="26.46" Width="406.35" Height="18.9" CanGrow="true" Text="[OfficialReceipt.PresentAddress]" Font="Arial, 10pt"/>
-      <TextObject Name="Text10" Left="18.9" Top="6.43" Width="406.35" Height="18.9" Text="[OfficialReceipt.TenantName]" Font="Arial, 10pt"/>
-      <TextObject Name="Text24" Left="481.95" Top="45.36" Width="179.55" Height="18.9" Text="[OfficialReceipt.TINNo]" Font="Arial, 10pt"/>
-      <TextObject Name="Text25" Left="481.95" Top="26.46" Width="179.55" Height="18.9" Text="[OfficialReceipt.Terms]" Font="Arial, 10pt"/>
-      <TextObject Name="Text26" Left="481.95" Top="6.43" Width="179.55" Height="18.9" Text="[OfficialReceipt.PrintedDate]" Font="Arial, 10pt"/>
+  <ReportPage Name="Page1" PaperWidth="215.9" PaperHeight="120" Watermark.Font="Arial, 60pt" LastPageSource="15" FirstPageSource="15">
+    <PageHeaderBand Name="PageHeader1" Width="740.5" Height="330.75">
+      <TextObject Name="txtCompanyName" Left="9.45" Top="37.8" Width="311.85" Height="18.9" Text="SHANGLAND DEVELOPMENT CORP." Font="Arial, 13pt"/>
+      <TextObject Name="Text10" Left="179.55" Top="82.03" Width="406.35" Height="18.9" Text="[OfficialReceipt.TenantName]" Font="Arial, 10pt"/>
+      <TextObject Name="Text24" Left="179.55" Top="119.07" Width="179.55" Height="18.9" Text="[OfficialReceipt.TINNo]" Font="Arial, 10pt"/>
+      <TextObject Name="Text3" Left="179.55" Top="141.75" Width="406.35" Height="18.9" CanGrow="true" Text="[OfficialReceipt.PresentAddress]" Font="Arial, 10pt"/>
+      <TextObject Name="Text6" Left="500.85" Top="170.1" Width="132.3" Height="18.9" Text="[OfficialReceipt.TotalAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt"/>
+      <TextObject Name="Text26" Left="548.1" Top="66.45" Width="179.55" Height="18.9" Text="[OfficialReceipt.PrintedDate]" Font="Arial, 10pt"/>
+      <TextObject Name="Text7" Left="151.2" Top="170.1" Width="330.75" Height="18.9" Text="[OfficialReceipt.UnitDesc]" Font="Arial, 10pt"/>
+      <TextObject Name="txtWatermark" Left="9.45" Top="56.7" Width="718.2" Height="18.9" Text="WATERMARK" Font="Arial, 13pt"/> 
+      <TextObject Name="Text30" Left="548.1" Top="47.25" Width="151.2" Height="18.9" Text="[OfficialReceipt.OfficialReceiptNo]" Font="Arial, 10pt"/>
+      <TextObject Name="Text12" Left="226.8" Top="255.15" Width="207.9" Height="18.9" Text="[OfficialReceipt.PrintedByName]" HorzAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text21" Left="500.85" Top="264.6" Width="132.3" Height="18.9" Text="[OfficialReceipt.TotalAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt"/>
+      <TextObject Name="Text28" Left="340.2" Top="274.05" Width="75.6" Height="18.9" Text="[Date]" Format="Date" Format.Format="d" Font="Arial, 9pt"/>
+      <TextObject Name="Text29" Left="255.15" Top="274.05" Width="75.6" Height="18.9" Text="Print Date:" HorzAlign="Right" Font="Arial, 9pt"/>
+      <TextObject Name="Text31" Left="37.8" Top="274.05" Width="179.55" Height="18.9" Text="[OfficialReceipt.PaymentMethodDesc]" Font="Arial, 10pt"/>
+      <TextObject Name="Text32" Left="37.8" Top="255.15" Width="245.7" Height="18.9" Text="[OfficialReceipt.BankDesc]" Font="Arial, 10pt"/>
     </PageHeaderBand>
-    <GroupHeaderBand Name="GroupHeader1" Top="175.81" Width="740.5" Height="28.35" Condition="[OfficialReceipt.CompanyName]">
-      <TextObject Name="Text22" Left="28.35" Top="5.67" Width="245.7" Height="18.9" Text="[OfficialReceipt.PaymentTypeDesc]" Font="Arial, 10pt"/>
-      <DataBand Name="DataOfficialReceipt" Top="207.02" Width="740.5" Height="22.68" Guides="0" DataSource="OfficialReceipt">
-        <TextObject Name="Text7" Left="47.25" Width="330.75" Height="18.9" Text="[OfficialReceipt.UnitDesc]" Font="Arial, 10pt"/>
-        <TextObject Name="Text6" Left="500.85" Width="132.3" Height="18.9" Text="[OfficialReceipt.TotalAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt"/>
-      </DataBand>
-    </GroupHeaderBand>
-    <PageFooterBand Name="PageFooter1" Top="232.56" Width="740.5" Height="247.59" Guides="132.3">
-      <TextObject Name="Text12" Left="406.35" Top="224.91" Width="207.9" Height="18.9" Text="[OfficialReceipt.PrintedByName]" HorzAlign="Center" Font="Arial, 10pt"/>
-      <TextObject Name="Text13" Left="500.85" Top="51.79" Width="132.3" Height="18.9" Text="[OfficialReceipt.TotalAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt"/>
-      <TextObject Name="Text14" Left="500.85" Top="94.5" Width="132.3" Height="18.9" Text="[OfficialReceipt.VATAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt"/>
-      <TextObject Name="Text15" Left="500.85" Top="117.18" Width="132.3" Height="18.9" Text="[OfficialReceipt.VATAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt"/>
-      <TextObject Name="Text16" Left="500.85" Top="139.86" Width="130.41" Height="18.9" Text="[OfficialReceipt.EWTAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt"/>
-      <TextObject Name="Text17" Left="500.85" Top="72.58" Width="132.3" Height="18.9" Text="[OfficialReceipt.NetOfVATAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt"/>
-      <TextObject Name="Text18" Left="18.9" Top="71.82" Width="132.3" Height="18.9" Text="[OfficialReceipt.NetOfVATAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt"/>
-      <TextObject Name="Text19" Left="18.9" Top="94.5" Width="132.3" Height="18.9" Text="[OfficialReceipt.VATAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt"/>
-      <TextObject Name="Text20" Left="878.85" Top="170.1" Width="132.3" Height="18.9" Text="[OfficialReceipt.VATAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt"/>
-      <TextObject Name="Text21" Left="500.85" Top="160.65" Width="132.3" Height="18.9" Text="[OfficialReceipt.TotalAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt"/>
-      <TextObject Name="Text28" Left="207.9" Top="217.35" Width="75.6" Height="18.9" Text="[Date]" Format="Date" Format.Format="d" Font="Arial, 9pt"/>
-      <TextObject Name="Text29" Left="132.3" Top="217.35" Width="75.6" Height="18.9" Text="Print Date:" HorzAlign="Right" Font="Arial, 9pt"/>
-	</PageFooterBand>
   </ReportPage>
 </Report>
