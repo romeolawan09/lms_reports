@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/29/2024 13:26:50" ReportInfo.Modified="01/07/2026 09:19:54" ReportInfo.CreatorVersion="2025.1.0.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="OfficialReceipt" ReferenceName="OfficialReceiptDailyCollectionFRX" DataType="System.Int32" Enabled="true">
+      <Column Name="OfficialReceiptId" DataType="System.String"/>
+      <Column Name="OfficialReceiptNo" DataType="System.String"/>
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="ProjectName" DataType="System.String"/>
+      <Column Name="TenantName" DataType="System.String"/>
+      <Column Name="UnitDesc" DataType="System.String"/>
+      <Column Name="TotalAmount" DataType="System.Decimal"/>
+      <Column Name="ParticularDesc" DataType="System.String"/>
+      <Column Name="Remarks" DataType="System.String"/>
+      <Column Name="DepositDate" DataType="System.String"/>
+      <Column Name="UserFullName" DataType="System.String"/>
+      <Column Name="EncodedByName" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <Total Name="SubTotalProject" Expression="[OfficialReceipt.TotalAmount]" Evaluator="DataOfficialReceipt" PrintOn="GroupHeader2"/>
+    <Total Name="SubTotalCompany" Expression="[OfficialReceipt.TotalAmount]" Evaluator="DataOfficialReceipt" PrintOn="GroupHeader1"/>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="215.9" PaperHeight="279.4" RawPaperSize="1" LeftMargin="5" TopMargin="5" RightMargin="5" BottomMargin="5" Guides="538.65" Watermark.Font="Arial, 60pt" LastPageSource="15" FirstPageSource="15">
+    <ReportTitleBand Name="ReportTitle1" Width="778.3" Height="100.17" Guides="75.6">
+      <TextObject Name="Text8" Top="9.45" Width="538.65" Height="18.9" Text="Daily Collection Report" Padding="0, 0, 2, 0" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text16" Left="637.31" Top="9.45" Width="61.99" Height="18.9" Text="Print Date:" Font="Arial, 8.25pt"/>
+      <TextObject Name="Text17" Left="637.31" Top="28.35" Width="61.99" Height="18.9" Text="Print Time:" Font="Arial, 8.25pt"/>
+      <TextObject Name="Text18" Left="699.3" Top="9.45" Width="75.6" Height="18.9" Text="[Date]" Format="Date" Format.Format="d" Font="Arial, 8.25pt"/>
+      <TextObject Name="Text19" Left="699.3" Top="28.35" Width="75.6" Height="18.9" Text="[Date]" Format="Time" Format.Format="T" Font="Arial, 8.25pt"/>
+      <TextObject Name="txtCollectionConvered" Left="567.38" Top="56.7" Width="209.41" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text33" Left="453.6" Top="56.7" Width="113.78" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Fill.Color="224, 224, 224" Text="Collection Covered" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="txtCompanyHeader" Left="60.86" Top="56.7" Width="392.74" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text67" Left="0.38" Top="56.7" Width="60.48" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Fill.Color="224, 224, 224" Text="Company" Padding="2, 2, 0, 2" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="txtDateGenerate" Left="567.38" Top="75.6" Width="209.41" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text100" Left="453.6" Top="75.6" Width="113.78" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Fill.Color="224, 224, 224" Text="Date Generate" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="txtProjectHeader" Left="60.86" Top="75.6" Width="392.74" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text102" Left="0.38" Top="75.6" Width="60.48" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Fill.Color="224, 224, 224" Text="Project" Padding="2, 2, 0, 2" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="103.37" Width="778.3" Height="19.28">
+      <TextObject Name="Text55" Left="0.38" Width="264.6" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Text="Tenant Name" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text56" Left="264.98" Width="121.72" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Text="Unit" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text57" Left="386.69" Width="52.92" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Text="OR No." HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text60" Left="439.61" Width="83.16" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Text="Total Amount" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text61" Left="522.77" Width="94.5" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Text="Particular" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text65" Left="683.42" Width="93.37" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Text="Remarks" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text64" Left="617.27" Width="66.15" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Text="Depo Date" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+    </PageHeaderBand>
+    <GroupHeaderBand Name="GroupHeader1" Top="125.85" Width="778.3" Height="18.9" Fill.Color="224, 224, 224" Condition="[OfficialReceipt.CompanyName]">
+      <TextObject Name="txtCompany" Top="3.78" Width="756" Height="11.34" CanShrink="true" AfterDataEvent="Text30_AfterData" Text="[OfficialReceipt.CompanyName]" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <GroupHeaderBand Name="GroupHeader2" Top="147.95" Width="778.3" Height="18.9" Condition="[OfficialReceipt.ProjectName]">
+        <TextObject Name="Text98" Left="4.91" Top="3.78" Width="746.55" Height="11.34" CanShrink="true" AfterDataEvent="Text30_AfterData" Text="[OfficialReceipt.ProjectName]" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+        <DataBand Name="DataOfficialReceipt" Top="170.05" Width="778.3" Height="18.9" CanGrow="true" DataSource="OfficialReceipt">
+          <TextObject Name="Text24" Left="9.45" Top="3.78" Width="255.15" Height="15.12" CanGrow="true" CanShrink="true" Text="[OfficialReceipt.TenantName]" VertAlign="Center" Font="Arial, 8.25pt"/>
+          <TextObject Name="Text24" Left="386.69" Top="3.78" Width="52.92" Height="15.12" CanGrow="true" CanShrink="true" Text="[OfficialReceipt.OfficialReceiptNo]" VertAlign="Center" Font="Arial, 8.25pt"/>
+          <TextObject Name="Text92" Left="264.6" Top="3.78" Width="122.85" Height="15.12" CanGrow="true" Text="[OfficialReceipt.UnitDesc]" VertAlign="Center" Font="Arial, 8.25pt"/>
+          <TextObject Name="Text93" Left="522.77" Top="3.78" Width="94.5" Height="15.12" Text="[OfficialReceipt.ParticularDesc]" VertAlign="Center" Font="Arial, 8.25pt"/>
+          <TextObject Name="Text94" Left="617.27" Top="3.78" Width="66.15" Height="15.12" Text="[OfficialReceipt.DepositDate]" VertAlign="Center" Font="Arial, 8.25pt"/>
+          <TextObject Name="Text95" Left="683.42" Top="3.78" Width="93.74" Height="15.12" Text="[OfficialReceipt.Remarks]" VertAlign="Center" Font="Arial, 8.25pt"/>
+          <TextObject Name="Text49" Left="439.61" Top="3.78" Width="83.16" Height="15.12" Text="[OfficialReceipt.TotalAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" Font="Arial, 8.25pt"/>
+        </DataBand>
+        <GroupFooterBand Name="GroupFooter1" Top="192.15" Width="778.3" Height="18.9" Fill.Color="White">
+          <TextObject Name="Text36" Left="9.45" Top="1.51" Width="429.03" Height="15.12" CanGrow="true" CanShrink="true" AfterDataEvent="Text30_AfterData" Text="Sub Total : [OfficialReceipt.ProjectName]" HorzAlign="Right" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+          <LineObject Name="Line1" Left="439.24" Width="243.81" Border.Width="0.5"/>
+          <TextObject Name="Text103" Left="439.61" Top="1.51" Width="83.16" Height="15.12" CanGrow="true" Text="[SubTotalProject]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+        </GroupFooterBand>
+      </GroupHeaderBand>
+      <GroupFooterBand Name="GroupFooter2" Top="214.25" Width="778.3" Height="26.08" Fill.Color="White" CanGrow="true">
+        <TextObject Name="Text38" Left="9.45" Top="1.51" Width="429.03" Height="15.12" CanGrow="true" CanShrink="true" AfterDataEvent="Text30_AfterData" Text="Grand Total : [OfficialReceipt.CompanyName]" HorzAlign="Right" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+        <LineObject Name="Line1" Left="439.24" Width="243.81" Border.Width="0.5"/>
+        <TextObject Name="Text104" Left="439.61" Top="1.51" Width="83.16" Height="15.12" CanGrow="true" Text="[SubTotalCompany]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" Font="Arial, 8.2pt, style=Bold"/>
+      </GroupFooterBand>
+    </GroupHeaderBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="243.53" Width="778.3" Height="207.9" Guides="37.8,37.8">
+      <TableObject Name="tblGrouptedParticular" Left="18.9" Top="18.9" Width="255.16" Height="44.9" Border.Lines="All" Border.Width="0.5">
+        <TableColumn Name="Column1" Width="155.91"/>
+        <TableColumn Name="Column3" Width="99.25"/>
+        <TableRow Name="Row1" Height="26">
+          <TableCell Name="Cell1" Fill.Color="224, 224, 224" Text="Summary Per Particular" Padding="5, 5, 5, 5" Font="Arial, 9pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell5" Font="Arial, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row2">
+          <TableCell Name="Cell3" Font="Arial, 9pt"/>
+          <TableCell Name="Cell6" Font="Arial, 9pt"/>
+        </TableRow>
+      </TableObject>
+      <TableObject Name="tblGrouptedCompany" Left="321.23" Top="18.9" Width="434.77" Height="44.9" Border.Lines="All" Border.Width="0.5" PrintOnParent="true">
+        <TableColumn Name="Column4" Width="335.51"/>
+        <TableColumn Name="Column5" Width="99.26"/>
+        <TableRow Name="Row3" Height="26">
+          <TableCell Name="Cell7" Fill.Color="224, 224, 224" Text="Summary Per Company" Padding="5, 5, 5, 5" Font="Arial, 9pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell8" Font="Arial, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row4">
+          <TableCell Name="Cell9" Font="Arial, 9pt"/>
+          <TableCell Name="Cell10" Font="Arial, 9pt"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text78" Top="85.05" Width="774.9" Height="9.45" Text="********** NOTHING FOLLOWS **********" HorzAlign="Center" VertAlign="Center" Font="Arial, 6.75pt, style=Bold"/>
+      <TextObject Name="Text105" Left="122.85" Top="141.75" Width="245.7" Height="18.9" Text="[OfficialReceipt.UserFullName]" HorzAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text106" Left="56.7" Top="141.75" Width="66.15" Height="18.9" Border.ShadowWidth="0.5" Text="Printed By:" HorzAlign="Right" VertAlign="Center" Font="Arial, 8.25pt"/>
+      <LineObject Name="Line3" Left="122.85" Top="160.65" Width="243.81" Border.Width="0.5"/>
+      <TextObject Name="Text108" Left="56.7" Top="170.1" Width="66.15" Height="18.9" Border.ShadowWidth="0.5" Text="Date:" HorzAlign="Right" VertAlign="Center" Font="Arial, 8.25pt"/>
+      <LineObject Name="Line4" Left="122.85" Top="189" Width="243.81" Border.Width="0.5"/>
+      <TextObject Name="Text109" Left="122.85" Top="170.1" Width="113.4" Height="18.9" Text="[Date]" Format="Date" Format.Format="d" HorzAlign="Right" Font="Arial, 8.25pt"/>
+      <TextObject Name="Text110" Left="236.25" Top="170.1" Width="132.3" Height="18.9" Text="[Date]" Format="Time" Format.Format="T" Font="Arial, 8.25pt"/>
+    </ReportSummaryBand>
+    <PageFooterBand Name="PageFooter1" Top="454.63" Width="778.3" Height="15.12">
+      <TextObject Name="Text23" Left="623.7" Width="151.2" Height="15.12" Text="[PageN] of [TotalPages#]" HorzAlign="Right" VertAlign="Center" Font="Arial, 6pt"/>
+      <TextObject Name="Text26" Width="132.3" Height="15.12" Text="LMS-OR-DLY-COL V01" VertAlign="Center" Font="Arial, 6pt, style=Italic"/>
+      <LineObject Name="Line2" Width="774.9" Border.Color="DimGray"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

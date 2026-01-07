@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/29/2024 13:26:50" ReportInfo.Modified="01/07/2026 15:29:21" ReportInfo.CreatorVersion="2025.1.0.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="Transmittal" ReferenceName="TransmittalFRX" DataType="System.Int32" Enabled="true">
+      <Column Name="TransmittalId" DataType="System.String"/>
+      <Column Name="TransmittalNo" DataType="System.String"/>
+      <Column Name="PaymentMethodDesc" DataType="System.String"/>
+      <Column Name="TransmittalDate" DataType="System.String"/>
+      <Column Name="TenantName" DataType="System.String"/>
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="BankDesc" DataType="System.String"/>
+      <Column Name="ClearingTypeDesc" DataType="System.String"/>
+      <Column Name="CheckDate" DataType="System.String"/>
+      <Column Name="CheckNo" DataType="System.String"/>
+      <Column Name="CheckAmount" DataType="System.String"/>
+      <Column Name="PaymentStatusDesc" DataType="System.String"/>
+      <Column Name="PrintedDate" DataType="System.String"/>
+      <Column Name="PrintedByName" DataType="System.String"/>
+      <Column Name="CreatedDate" DataType="System.String"/>
+      <Column Name="CreatedByName" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <Total Name="TotalCheck" TotalType="Count" Evaluator="DataTransmittal"/>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="215.9" PaperHeight="279.4" RawPaperSize="1" LeftMargin="5" TopMargin="5" RightMargin="5" BottomMargin="5" Watermark.Font="Arial, 60pt" LastPageSource="15" FirstPageSource="15">
+    <ReportTitleBand Name="ReportTitle1" Width="778.3" Height="100.17">
+      <TextObject Name="Text8" Top="9.45" Width="604.8" Height="18.9" Text="PDC Transmittal" Padding="0, 0, 2, 0" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text16" Left="637.31" Top="9.45" Width="61.99" Height="18.9" Text="Print Date:" Font="Arial, 8.25pt"/>
+      <TextObject Name="Text17" Left="637.31" Top="28.35" Width="61.99" Height="18.9" Text="Print Time:" Font="Arial, 8.25pt"/>
+      <TextObject Name="Text18" Left="699.3" Top="9.45" Width="75.6" Height="18.9" Text="[Date]" Format="Date" Format.Format="d" Font="Arial, 8.25pt"/>
+      <TextObject Name="Text19" Left="699.3" Top="28.35" Width="75.6" Height="18.9" Text="[Date]" Format="Time" Format.Format="T" Font="Arial, 8.25pt"/>
+      <TextObject Name="txtCollectionConvered" Left="553.77" Top="56.7" Width="222.26" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Text="[Transmittal.TransmittalDate]" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text33" Left="453.6" Top="56.7" Width="100.17" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Fill.Color="224, 224, 224" Text="Transmittal Date" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="txtCompanyHeader" Left="92.61" Top="75.6" Width="683.42" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Text="[Transmittal.PaymentMethodDesc]" Padding="5, 0, 2, 0" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text67" Left="0.38" Top="56.7" Width="92.61" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Fill.Color="224, 224, 224" Text="Transmittal No." Padding="2, 2, 0, 2" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text102" Left="0.38" Top="75.6" Width="92.61" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Fill.Color="224, 224, 224" Text="Payment Type" Padding="2, 2, 0, 2" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="txtTellerHeader" Left="92.61" Top="56.7" Width="360.99" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Text="[Transmittal.TransmittalNo]" Padding="5, 0, 2, 0" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="101.95" Width="778.3" Height="19.28">
+      <TextObject Name="Text55" Left="19.28" Width="179.55" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Text="Tenant Name" Padding="0, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text56" Left="198.83" Width="190.51" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Text="Payee" Padding="0, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text57" Left="389.34" Width="51.03" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Text="Bank" Padding="0, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text60" Left="440.37" Width="49.14" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Text="Clearing" Padding="0, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text61" Left="642.6" Width="65.39" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Text="Check Date" Padding="0, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text64" Left="489.51" Width="75.6" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Text="Check No." Padding="0, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text63" Left="707.99" Width="68.04" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Text="Status" Padding="0, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text62" Left="565.11" Width="77.49" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Text="Check Amt" Padding="0, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text121" Width="18.9" Height="18.9" Border.ShadowWidth="0.5" Border.Lines="All" Border.Width="0.5" Text="#" Padding="0, 0, 0, 0" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="DataTransmittal" Top="123.01" Width="778.3" Height="18.9" CanGrow="true" CanBreak="true" DataSource="Transmittal">
+      <TextObject Name="Text24" Left="18.9" Top="3.78" Width="179.55" Height="15.12" CanGrow="true" CanShrink="true" Text="[Transmittal.TenantName]" VertAlign="Center" Font="Arial, 7.5pt"/>
+      <TextObject Name="Text113" Left="198.45" Top="3.78" Width="190.51" Height="15.12" CanGrow="true" CanShrink="true" Text="[Transmittal.CompanyName]" VertAlign="Center" Font="Arial, 7.5pt"/>
+      <TextObject Name="Text114" Left="642.6" Top="3.78" Width="65.39" Height="15.12" CanGrow="true" Text="[Transmittal.CheckDate]" Format="Date" Format.Format="d" HorzAlign="Center" VertAlign="Center" Font="Arial, 7.5pt"/>
+      <TextObject Name="Text115" Left="707.99" Top="3.78" Width="94.5" Height="15.12" CanGrow="true" Text="[Transmittal.PaymentStatusDesc]" VertAlign="Center" Font="Arial, 7.5pt"/>
+      <TextObject Name="Text116" Left="489.51" Top="3.78" Width="75.6" Height="15.12" CanGrow="true" Text="[Transmittal.CheckNo]" VertAlign="Center" Font="Arial, 7.5pt"/>
+      <TextObject Name="Text117" Left="565.49" Top="3.78" Width="75.6" Height="15.12" CanGrow="true" Text="[Transmittal.CheckAmount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" Font="Arial, 7.5pt"/>
+      <TextObject Name="Text118" Left="389.34" Top="3.78" Width="51.03" Height="15.12" CanGrow="true" Text="[Transmittal.BankDesc]" VertAlign="Center" Font="Arial, 7.5pt"/>
+      <TextObject Name="Text119" Left="440.37" Top="3.78" Width="49.14" Height="15.12" CanGrow="true" Text="[Transmittal.ClearingTypeDesc]" VertAlign="Center" Font="Arial, 7.5pt"/>
+      <TextObject Name="Text122" Top="3.78" Width="18.9" Height="15.12" Text="[Row#]" HorzAlign="Right" VertAlign="Center" Font="Arial, 7.5pt"/>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="143.68" Width="778.3" Height="198.45" Guides="113.4">
+      <TextObject Name="Text78" Width="774.9" Height="18.9" Text="********** NOTHING FOLLOWS **********" HorzAlign="Center" VertAlign="Center" Font="Arial, 6.75pt, style=Bold"/>
+      <LineObject Name="Line2" Left="151.2" Top="56.7" Width="179.55"/>
+      <TextObject Name="Text74" Left="47.25" Top="37.8" Width="103.95" Height="18.9" Text="Transmitted By:" HorzAlign="Right" VertAlign="Center" Font="Arial, 8.25pt"/>
+      <TextObject Name="Text75" Left="47.25" Top="66.15" Width="103.95" Height="18.9" Text="Received By:" HorzAlign="Right" VertAlign="Center" Font="Arial, 8.25pt"/>
+      <TextObject Name="Text76" Left="359.1" Top="37.8" Width="37.8" Height="18.9" Text="Date:" VertAlign="Center" Font="Arial, 8.25pt"/>
+      <TextObject Name="Text77" Left="359.1" Top="66.15" Width="37.8" Height="18.9" Text="Date:" VertAlign="Center" Font="Arial, 8.25pt"/>
+      <LineObject Name="Line3" Left="396.9" Top="56.7" Width="75.6"/>
+      <LineObject Name="Line4" Left="396.9" Top="85.05" Width="75.6"/>
+      <LineObject Name="Line5" Left="151.2" Top="85.05" Width="179.55"/>
+      <TextObject Name="Text111" Left="841.05" Top="9.45" Width="94.5" Height="18.9" Text="40.000.00" Font="Arial, 10pt"/>
+      <TextObject Name="Text112" Left="576.45" Top="37.8" Width="85.05" Height="18.9" Text="Total Checks:" VertAlign="Center" Font="Arial, 8.25pt"/>
+      <LineObject Name="Line12" Left="652.05" Top="56.7" Width="56.7"/>
+      <TextObject Name="Text120" Left="652.05" Top="37.8" Width="56.7" Height="18.9" Text="[TotalCheck]" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text123" Left="151.2" Top="37.8" Width="179.55" Height="18.9" Text="[Transmittal.CreatedByName]" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text124" Left="396.9" Top="37.8" Width="75.6" Height="18.9" Text="[Transmittal.CreatedDate]" Format="Date" Format.Format="d" HorzAlign="Center" VertAlign="Center" Font="Arial, 8.25pt, style=Bold"/>
+      <TextObject Name="Text125" Left="47.25" Top="94.5" Width="103.95" Height="18.9" Text="Acknowledge By:" HorzAlign="Right" VertAlign="Center" Font="Arial, 8.25pt"/>
+      <TextObject Name="Text126" Left="359.1" Top="94.5" Width="37.8" Height="18.9" Text="Date:" VertAlign="Center" Font="Arial, 8.25pt"/>
+      <LineObject Name="Line13" Left="396.9" Top="113.4" Width="75.6"/>
+      <LineObject Name="Line14" Left="151.2" Top="113.4" Width="179.55"/>
+    </ReportSummaryBand>
+    <PageFooterBand Name="PageFooter1" Top="343.91" Width="778.3" Height="15.12">
+      <TextObject Name="Text23" Left="623.7" Width="151.2" Height="15.12" Text="[PageN] of [TotalPages#]" HorzAlign="Right" VertAlign="Center" Font="Arial, 6pt"/>
+      <LineObject Name="Line11" Width="774.9" Border.Color="DimGray"/>
+      <TextObject Name="Text26" Width="103.95" Height="15.12" Text="LMS-TRANS V01" VertAlign="Center" Font="Arial, 6pt, style=Italic"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>
